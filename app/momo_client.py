@@ -22,39 +22,68 @@ class MoMoClient:
     def fetch_transactions(self, user_id: str, start_date: str = None, end_date: str = None):
         """
         Fetch user transactions from MoMo API.
+        For demo purposes, return mock data.
         """
-        url = f"{self.base_url}/users/{user_id}/transactions"
-        params = {}
-        if start_date:
-            params["start_date"] = start_date
-        if end_date:
-            params["end_date"] = end_date
-        response = self.session.get(url, params=params)
-        response.raise_for_status()
-        return response.json()
+        # Mock transaction data
+        mock_data = {
+            "transactions": [
+                {
+                    "id": "txn_001",
+                    "amount": 50.0,
+                    "description": "Coffee purchase",
+                    "date": "2023-10-01T10:00:00Z",
+                    "type": "expense"
+                },
+                {
+                    "id": "txn_002",
+                    "amount": 200.0,
+                    "description": "Salary",
+                    "date": "2023-10-01T09:00:00Z",
+                    "type": "income"
+                },
+                {
+                    "id": "txn_003",
+                    "amount": 25.0,
+                    "description": "Bus fare",
+                    "date": "2023-09-30T08:00:00Z",
+                    "type": "expense"
+                },
+                {
+                    "id": "txn_004",
+                    "amount": 100.0,
+                    "description": "Freelance payment",
+                    "date": "2023-09-29T15:00:00Z",
+                    "type": "income"
+                }
+            ]
+        }
+        return mock_data
 
     def create_savings_goal(self, user_id: str, amount: float, deadline: str = None):
         """
         Create a savings goal for the user.
+        For demo purposes, return mock response.
         """
-        url = f"{self.base_url}/users/{user_id}/savings-goals"
-        payload = {
-            "amount": amount
+        # Mock response
+        mock_response = {
+            "goal_id": "goal_001",
+            "user_id": user_id,
+            "target_amount": amount,
+            "deadline": deadline,
+            "status": "created"
         }
-        if deadline:
-            payload["deadline"] = deadline
-        response = self.session.post(url, json=payload)
-        response.raise_for_status()
-        return response.json()
+        return mock_response
 
     def transfer_to_savings(self, user_id: str, amount: float):
         """
         Transfer money to the user's savings wallet.
+        For demo purposes, return mock response.
         """
-        url = f"{self.base_url}/users/{user_id}/transfer"
-        payload = {
-            "amount": amount
+        # Mock response
+        mock_response = {
+            "transfer_id": "transfer_001",
+            "user_id": user_id,
+            "amount": amount,
+            "status": "completed"
         }
-        response = self.session.post(url, json=payload)
-        response.raise_for_status()
-        return response.json()
+        return mock_response
