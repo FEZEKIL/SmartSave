@@ -57,7 +57,7 @@ momo-smartsave-hackathon/
 
 ## Contributing
 
-This is a hackathon project. Feel free to contribute improvements!
+This is a MTN MoMo Hackathon project. Feel free to contribute improvements!
 
 ## License
 

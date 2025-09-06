@@ -10,7 +10,7 @@ __pycache__/
 env/
 venv/
 .venv/
-.tf_env/
+tf_env/
 pip-log.txt
 pip-delete-this-directory.txt
 .tox/
