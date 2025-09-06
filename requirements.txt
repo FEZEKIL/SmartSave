@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+requests
+scikit-learn
+tensorflow
+pandas
+numpy
+python-dotenv
+anyio>=4.8.0
+protobuf>=6.30.0
