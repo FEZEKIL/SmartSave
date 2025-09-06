@@ -9,3 +9,4 @@ numpy
 python-dotenv
 anyio>=4.8.0
 protobuf>=6.30.0
+gunicorn==21.2.0
