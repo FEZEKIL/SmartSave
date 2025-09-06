@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from app.models import Transaction, SavingsGoal, TransferRequest, APIResponse, AIInsight
 from app.momo_client import MoMoClient
 from app.ai_engine import AIEngine
@@ -6,6 +7,15 @@ from typing import List
 import os
 
 app = FastAPI(title="SmartSave API", description="AI-powered savings with MoMo integration")
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 momo_client = MoMoClient()
 ai_engine = AIEngine()
